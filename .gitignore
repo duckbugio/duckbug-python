@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+.python-version
+
+# Tool caches (we keep them under var/, but ignore everything just in case)
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Project cache dir
+var/cache/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+
