@@ -1,0 +1,23 @@
+name: duckbug-python
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache tool caches (var/cache)
+        uses: actions/cache@v4
+        with:
+          path: var/cache
+          key: duckbug-python-${{ runner.os }}-${{ hashFiles('pyproject.toml') }}
+
+      - name: Run checks (lint + mypy + tests)
+        run: |
+          make docker-build
+          make check
